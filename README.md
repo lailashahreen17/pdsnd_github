@@ -1,5 +1,5 @@
 ### Date created
-Include the date you created this project and README file.
+June 20th, 2020
 
 ### Project Title
 Bikeshare Data Analysis for cities
