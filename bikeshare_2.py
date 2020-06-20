@@ -23,9 +23,9 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-  
+
     cities = CITY_DATA.keys()
-    
+
     while True:
         city = input("\n Which city are you interested in to look at? new york city, chicago or washington?\n").lower()
         if city not in cities:
@@ -33,10 +33,10 @@ def get_filters():
             continue
         else:
             break
-            
-        
-    # Get user input for month, day or both 
-    
+
+
+    # Get user input for month, day or both
+
     while True:
         filter_by = input("Do you want to filter by month, day or both?Please enter month or day or both.\n")
         if filter_by not in choice:
@@ -44,7 +44,7 @@ def get_filters():
             continue
         else:
             break
-    
+
     while True:
     # when user preference is month
         if filter_by == choice[0]:
@@ -55,7 +55,7 @@ def get_filters():
                 continue
             else:
                 break
-    # when user preference is day     
+    # when user preference is day
         elif filter_by == choice[1]:
             month = 'all'
             day = input('If you are looking for a particular day please type the day as follows: sunday, monday, tuesday, wednesday, thursday, friday, saturday or all.\n').lower()
@@ -64,8 +64,8 @@ def get_filters():
                 continue
             else:
                 break
-    # when user prefence is both   
-            
+    # when user prefence is both
+
         elif filter_by == choice[2]:
             while True:
                 month = input('Which month are you interested in to look at? january, february, march, april, may, june or all?\n').lower()
@@ -133,18 +133,18 @@ def time_stats(df):
 
     # Display the most common month
     most_common_month= df['month'].mode()[0]
-    print('Most Common Month:', most_common_month)
+    print('The Most Common Month is: {}'.format(most_common_month))
 
 
     # Display the most common day of week
     most_common_weekday = df['day_of_week'].mode()[0]
-    print('Most Common Day:', most_common_weekday)
+    print('The Most Common Day is: {}'.format(most_common_weekday))
 
 
     # Display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     most_common_hour = df['hour'].mode()[0]
-    print('Most Common Hour:', most_common_hour)
+    print('The Most Common Hour is : {}'.format(most_common_hour))
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -194,7 +194,7 @@ def trip_duration_stats(df):
     print('Mean travel time:', Mean_Travel_Time, " Minutes")
 
 
-    
+
     print('\nThis took %s seconds.' % (time.time() - start_time))
     print('-'*50)
 
@@ -211,7 +211,7 @@ def user_stats(df):
 
 
     # Display counts of gender
-    #Gender data is not available for Washington city,so we may need to be careful 
+    #Gender data is not available for Washington city,so we may need to be careful
     try:
       gender_types = df['Gender'].value_counts()
       print('\nGender Types:\n', gender_types)
@@ -248,9 +248,9 @@ def display_data(df):
     the user.
     """
     # Dispalying five random rows of the raw data
-    
+
     interested_in_display = input('Do you want to see five lines of the raw data?Enter yes or no.\n').lower()
-    
+
     while interested_in_display == 'yes':
         print('\nRaw Data Display:\n', df[df.columns[0:-4]].sample(5))
         terminate_display = input('\nDo you wish to continue?Enter yes or no.\n').lower()
@@ -258,7 +258,7 @@ def display_data(df):
             break
         else:
             print("\nLet's print more raw data\n")
-           
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -277,5 +277,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
-
