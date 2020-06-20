@@ -2,7 +2,7 @@
 Include the date you created this project and README file.
 
 ### Project Title
-Replace the Project Title
+Bikeshare Data Analysis for cities
 
 ### Description
 In this project, I explored three different datasets on bike share information provided by Motivate at three large cities such as Chicago, New York City and Washington.To identify what kind of data are shared and also to better understand the descriptive statistics, trip information, user type etc., I wrote the Python script to extract respective column/s and then analyzed the info.
